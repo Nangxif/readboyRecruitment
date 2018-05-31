@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>读书郎简历模板系统</title>
+    <link rel="shortcut icon" href="/public/images/favicon.ico"/>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/iconfont.css"/>
+    <link rel="stylesheet" href="/public/css/chooseModel.css"/>
+    <!--瀑布流样式-->
+
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #container {
+            overflow: hidden;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+        }
+
+        #background_video {
+            position: absolute;
+
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+
+            object-fit: cover;
+            height: 100%; width: 100%;
+        }
+
+        #video_cover {
+            position: absolute;
+
+            width: 100%; height: 100%;
+
+            background: url('/public/images/video_cover.jpeg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #video_controls {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        #play img {
+            width: 100px;
+        }
+        #pause img {
+            width: 90px;
+        }
+        #pause {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            #video_controls {
+                display: none;
+            }
+        }
+        /* Demo page specific styles */
+        body {
+            text-align: center;
+            font-family: 'proxima-nova', Helvetica;
+        }
+        #container {
+            height: 100%;
+        }
+        #overlay {
+            position: absolute;
+            top: 0; right: 0; left: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        #main_content {
+            z-index: 2;
+            position: relative;
+            display: inline-block;
+            /* Vertical center */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #main_content h1 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: 'proxima-nova-condensed', Helvetica;
+            color: #fff;
+            font-size: 35px;
+        }
+        #main_content .sub_head {
+            color: rgba(255,255,255,0.5);
+            font-size: 18px;
+        }
+        #main_content .info {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        #links {
+            margin-top: 50px;
+        }
+        #links a {
+            border: 2px solid rgba(255,255,255,0.20);
+            border-radius: 61px;
+            font-size: 12px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 25px;
+            display: inline-block;
+            margin-right: 15px;
+        }
+        #footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        #footer a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin: 10px;
+            font-size: 12px;
+        }
+        #footer a:first-child {
+            float: left;
+        }
+        #footer a:last-child {
+            float: right;
+        }
+
+
+        /*瀑布流样式*/
+        .grid {
+
+            position: relative;
+
+            /* fluffy */
+            margin: 0 auto;
+            width: 80%;
+            /* end fluffy */
+        }
+
+        .grid-item {
+            position: absolute;
+
+            /* fluffy */
+            opacity: 0;
+            /*box-shadow: 1px 1px #9E9E9E;*/
+            width: 300px;
+            height: 450px;
+            border-radius: 3px;
+            /* end fluffy */
+
+        }
+        .grid-item:hover {
+            -moz-box-shadow:0px 0px 10px #DBDBDB;
+            -webkit-box-shadow:0px 0px 10px #DBDBDB;
+            box-shadow:0px 0px 10px #DBDBDB;
+            cursor: pointer;
+        }
+
+        /* mq */
+
+        @media (max-width: 600px) {
+            .grid-item {
+                width: 120px;
+                height: 80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="title-wrap">
+    <div class="self">个人中心</div>
+    <div class="login">登录</div>
+    <div class="register">注册</div>
+</div>
+<div id="container">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+    <div id="video_controls">
+      <span id="play">
+        <img src="/public/images/play.png">
+      </span>
+        <span id="pause">
+        <img src="/public/images/pause.png">
+      </span>
+    </div>
+    <section id="main_content">
+        <div id="head">
+            <h1>读书郎简历模板系统</h1>
+            <p class="sub_head">一个强大的简历模板生成系统</p>
+            <div class="input-group" style="width: 450px;height:45px;margin: 0 auto;">
+                <input type="text" class="form-control" placeholder="请输入搜索关键字" style="height: 100%;">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" style="display: inline-block;height: 45px;"><i class="iconfont icon-search"></i></button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </section>
+</div>
+<div id="container2">
+    <div class="input-group movegrop">
+        <input type="text" class="form-control" placeholder="请输入搜索关键字">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="iconfont icon-search"></i></button>
+        </span>
+    </div><!-- /input-group -->
+    <!--瀑布流-->
+    <div class="grid">
+        <div class="grid-item" style="background-image: url('/public/images/model1.png'); background-repeat: no-repeat;background-size: 100% 100%;"></div>
+        <div class="grid-item" style="background-image: url('/public/images/model2.png'); background-repeat: no-repeat;background-size: 100% 100%;"></div>
+        <div class="grid-item" style="background-image: url('/public/images/model3.png'); background-repeat: no-repeat;background-size: 100% 100%;"></div>
+    </div>
+
+    <footer>
+        <div style="text-align:center">
+            <a  href="http://www.readboy.com/list-58-1.html">版权声明</a>©2017 读书郎教育科技有限公司 版权所有(<a href="http://www.miibeian.gov.cn/">粤ICP备12092216号-1</a>)<br>
+            <a href="http://wljg.gdgs.gov.cn/corpsrch.aspx?key=442000000171401" target="_blank" title="企业名称：读书郎教育科技有限公司&nbsp;&nbsp;法定代表人：秦曙光&nbsp;&nbsp;标识状态：已激活&nbsp;&nbsp;" style="line-height: 35px">
+                <img src="http://www.readboy.com/statics/images/gs_icon_201411260029331.png" alt="" style="display: inline-block;position: static;">粤工商备P201708002261
+            </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44200002442753" style="line-height: 35px"><img src="http://www.readboy.com/statics/images/gaba.png" style="display: inline-block;position: static;"/>粤公网安备 44200002442753号</a>
+        </div>
+    </footer>
+</div>
+<div class="side-bar">
+    <ul>
+        <li><a href="#container" class="scroll"></a></li>
+        <li><a href="#container2" class="scroll"></a></li>
+    </ul>
+</div>
+
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/bideo.js"></script>
+<script src="/public/js/main.js"></script>
+<script src="/public/js/chooseModel.js"></script>
+<script src="/public/js/dynamics.js"></script>
+<script src="/public/js/minigrid.js"></script>
+</body>
+</html>
