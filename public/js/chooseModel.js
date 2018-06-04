@@ -34,7 +34,7 @@ $(function(){
 
         }else{
             $('.title-wrap').css("display","none");
-            $(".movegrop").css("left","-63%");
+            $(".movegrop").css("left","-80%");
             $('body').mousemove(function(e) {
                 e = e || window.event;
                 __yy = e.pageY || e.clientY + document.body.scrollTop;
