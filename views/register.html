@@ -13,7 +13,6 @@
 <body>
     <div class="title-wrap">
         <div class="logo"></div>
-        <div class="self"><a>个人中心</a></div>
         <div class="login"><a href="/login">登录</a></div>
         <div class="register"><a href="register">注册</a></div>
     </div>
@@ -23,25 +22,25 @@
         <div class="title">欢迎注册读书郎招聘模板系统</div>
         <div class="row">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="请填写账户名">
+                <input type="text" class="form-control" placeholder="请填写用户名" id="userName">
             </div><!-- /input-group -->
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="请填写工号">
+                <input type="text" class="form-control" placeholder="请填写工号" id="userId">
             </div><!-- /input-group -->
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="请选择部门">
+                <input type="text" class="form-control" placeholder="请选择部门" id="apartment">
             </div><!-- /input-group -->
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="请填写性别">
+                <input type="text" class="form-control" placeholder="请填写性别" id="sex">
             </div><!-- /input-group -->
             <div class="input-group">
-                <input type="password" class="form-control" placeholder="请填写密码">
+                <input type="password" class="form-control" placeholder="请填写密码" id="password">
             </div><!-- /input-group -->
             <div class="input-group">
-                <input type="password" class="form-control" placeholder="请填写确认密码">
+                <input type="password" class="form-control" placeholder="请填写确认密码" id="repassword">
             </div><!-- /input-group -->
             <div class="input-group">
-                <button type="button" class="btn">点击此处进行注册</button>
+                <button type="button" class="btn" id="register-btn" data-toggle="modal" data-target="#myModal">点击此处进行注册</button>
             </div><!-- /input-group -->
         </div>
     </div>
@@ -57,7 +56,30 @@
             </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44200002442753" style="line-height: 35px"><img src="http://www.readboy.com/statics/images/gaba.png" style="display: inline-block;position: static;"/>粤公网安备 44200002442753号</a>
         </div>
     </footer>
+
+
+
+
+    <!--The StartLine of the modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">注册结果</h4>
+                </div>
+                <div class="modal-body" id="registersuccess">
+
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-default" href="" id="register_close">关闭</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--The EndLine of the modal-->
 </body>
 <script src="/public/js/jquery-3.3.1.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/DES.js"></script>
+<script src="/public/js/register.js"></script>
 </html>

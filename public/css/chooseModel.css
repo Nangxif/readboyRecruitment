@@ -3,7 +3,6 @@ a,a:hover{
     text-decoration: none;
 }
 .title-wrap{
-    display: none;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -11,8 +10,7 @@ a,a:hover{
     background-color:rgba(255,255,255,0.5);
     z-index: 2;
     color: #ffffff;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 14px;
 }
 .title-wrap .logo{
     float: left;
@@ -26,7 +24,9 @@ a,a:hover{
 .title-wrap .self{
     float: right;
     height: 100%;
-    width:100px;
+    width: 150px;
+    padding-left: 5px;
+    padding-right: 5px;
     line-height: 60px;
     text-align: center;
     cursor: pointer;
@@ -62,6 +62,26 @@ a,a:hover{
 .title-wrap .self:hover,.title-wrap .login:hover,.title-wrap .register:hover{
     background-color: rgba(255,255,255,0.6);
 }
+.self-detail{
+    display: none;
+    position: relative;
+    right: -5px;
+    width: 150px;
+    background-color: rgba(255,255,255,0.5);
+}
+.self-detail ul li{
+    list-style: none;
+}
+.self-detail ul li:hover{
+    background-color: rgba(255,255,255,0.6);
+}
+
+
+
+
+
+
+
 .title-wrap a{
     display: block;
     width: 100%;
@@ -69,7 +89,7 @@ a,a:hover{
 }
 .side-bar{
     position: fixed;
-    right: 0px;
+    right: 25px;
     top: 50%;
 }
 .side-bar ul{
@@ -102,10 +122,28 @@ a,a:hover{
     width: 100%;
     height: 100%;
     background-color: #2d2126;
+    overflow-y:auto;
+}
+.grid{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    margin: 100px auto;
+    width: 1000px;
+}
+.grid-item{
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 20px;
+}
+.grid-item:hover{
+    -moz-box-shadow:0px 0px 10px #FFFFFF;
+    -webkit-box-shadow:0px 0px 10px #FFFFFF;
+    box-shadow:0px 0px 10px #FFFFFF;
 }
 .movegrop{
-    position: relative;
-    left: -80%;
     width: 450px;
     height:45px;
     margin:  110px auto;
@@ -120,7 +158,5 @@ a,a:hover{
 
 footer{
     width: 100%;
-    position: absolute;
-    bottom: 50px;
     color: white;
 }

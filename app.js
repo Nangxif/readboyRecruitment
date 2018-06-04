@@ -8,6 +8,7 @@ var swig=require('swig');
 var mongoose=require('mongoose');
 //加载body-parser用来处理post提交过来的数组
 var bodyParser=require('body-parser');
+var Register=require('./models/registerModel');
 //加载cookie模块
 var Cookies=require('cookies');
 //创建app应用=>NodeJS Http.createServer();
@@ -33,35 +34,35 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //设置cookies,无论请求哪个地址，都会走这个中间件
 app.use(function(req,res,next){
-    // req.cookies=new Cookies(req,res);
-    // //解析登录用户的cookie信息
-    // req.userInfo={};
-    // if(req.cookies.get('userinfo')){
-    //     try{
-    //         req.userInfo=JSON.parse(req.cookies.get('userinfo'));
-    //         Register.findById(req.userInfo._id).then(function(userInfo){
-    //             //在接收到请求之后，给cookies对象再添加一个isAdmin属性
-    //             req.userInfo.isAdmin=Boolean(userInfo.isAdmin);
-    //             next();
-    //         });
-    //     }catch(e){
-    //         next();
-    //     }
-    // }else{
-    //     next();
-    // }
-    next();
+    req.cookies=new Cookies(req,res);
+    //解析登录用户的cookie信息
+    req.userInfo={};
+    if(req.cookies.get('userinfo')){
+        try{
+            req.userInfo=JSON.parse(req.cookies.get('userinfo'));
+            Register.findById(req.userInfo._id).then(function(userInfo){
+                req.userInfo._id=userInfo._id;
+                req.userInfo.userid=userInfo.userid;
+                req.userInfo.username=userInfo.username;
+                next();
+            });
+        }catch(e){
+            next();
+        }
+    }else{
+        next();
+    }
 });
 
 //根据不同的功能划分模块
 app.use('/',require('./routers/index'));
+app.use('/modal',require('./routers/modal'));
 //监听http请求
-app.listen('8080');
-// mongoose.connect('mongodb://localhost:27017/blog',function(err){
-//     if(err){
-//         console.log('数据库连接失败!');
-//     }else{
-//         console.log('数据库连接成功!');
-//         app.listen('4200');
-//     }
-// });
+mongoose.connect('mongodb://localhost:27018/blog',function(err){
+    if(err){
+        console.log('数据库连接失败!');
+    }else{
+        console.log('数据库连接成功!');
+        app.listen('8080');
+    }
+});

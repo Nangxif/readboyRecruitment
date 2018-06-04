@@ -6,7 +6,7 @@ module.exports=new mongoose.Schema({
     //昵称
     username:String,
     //工号
-    mobilephone:Number,
+    userid:Number,
     //密码
     password:String,
     //部门

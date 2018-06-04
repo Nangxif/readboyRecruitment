@@ -9,24 +9,32 @@
     <link rel="shortcut icon" href="/public/images/favicon.ico"/>
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/public/css/login.css"/>
-    <link rel='stylesheet' id='top-css' href='/public/css/index1.css' type='text/css' media='all' />
 </head>
 <body>
     <div class="title-wrap">
         <div class="logo"></div>
-        <div class="self"><a>个人中心</a></div>
         <div class="login"><a href="/login">登录</a></div>
         <div class="register"><a href="register">注册</a></div>
     </div>
-    <div id="document"  class="top-page">
-        <div id="top" class="page-id">
-            <main id="main-wrap">
-                <header id="kv-wrap" class="full-screen-wrap hide">
-                    <canvas id="kv-bg"></canvas>
-                </header>
-            </main>
+    <div class="login-wrap">
+        <div class="login-content">
+            <p class="title">密码登录</p>
+            <p class="fu-title">请在下方输入您的工号密码</p>
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="工号" id="userid">
+                </div><!-- /input-group -->
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="密码" id="password">
+                </div><!-- /input-group -->
+                <div class="input-group">
+                    <button type="button" class="btn" id="login-btn" data-toggle="modal" data-target="#myModal">登录</button>
+                </div><!-- /input-group -->
+                <a href="/register" style="display: block;margin: 20px 0px 0px 0px;color:#9B9EA0;font-size: 12px;text-align: right;">未注册？点击此处进行注册</a>
+            </form>
         </div>
     </div>
+    <img src="/public/images/wanxia.png" class="bg"/>
     <footer>
         <div style="text-align:center;height: 100%; padding-top: 24px;">
             <a  href="http://www.readboy.com/list-58-1.html">版权声明</a>©2017 读书郎教育科技有限公司 版权所有(<a href="http://www.miibeian.gov.cn/">粤ICP备12092216号-1</a>)<br>
@@ -35,9 +43,28 @@
             </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44200002442753" style="line-height: 35px"><img src="http://www.readboy.com/statics/images/gaba.png" style="display: inline-block;position: static;"/>粤公网安备 44200002442753号</a>
         </div>
     </footer>
+
+
+
+    <!--The StartLine of the modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">登录结果</h4>
+                </div>
+                <div class="modal-body" id="loginsuccess">
+
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-default" href="" id="login_close">关闭</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--The EndLine of the modal-->
 </body>
 <script src="/public/js/jquery-3.3.1.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
-<script src="/public/js/script.js"></script>
-<script type='text/javascript' src='/public/js/index1.js'></script>
+<script src="/public/js/login.js"></script>
 </html>

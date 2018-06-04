@@ -7,8 +7,6 @@ a,a:hover{
     text-decoration: none;
 }
 .title-wrap{
-    position: fixed;
-    top: 0px;
     width: 100%;
     height: 60px;
     z-index: 2;
@@ -73,13 +71,10 @@ a,a:hover{
 
 .registerModel{
     margin: auto;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
+    margin-top: 200px;
+    margin-bottom: 150px;
     width: 380px;
-    height: 600px;
+    height: 440px;
 }
 .registerModel .title{
     width: 100%;
@@ -114,8 +109,6 @@ a,a:hover{
 footer{
     width: 100%;
     height: 100px;
-    position: absolute;
-    bottom: 0px;
     background-color: #373d41;
     color: #73777a;
 }
@@ -125,4 +118,13 @@ footer a{
 footer a:hover{
     color:#00c1de;
 }
-
+.modal-dialog{
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+    max-height: 200px;
+}
