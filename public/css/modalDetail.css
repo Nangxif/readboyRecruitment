@@ -1,0 +1,109 @@
+body{
+    height: 10000000px;
+}
+a:visited,a:hover,a:active{
+    text-decoration: none;
+}
+.jumbotron {
+    margin-bottom: 0px;
+    text-align: center;
+    background-color:#4e372f;
+    color: #fff;
+}
+.jumbotron .btn-getting-started {
+    color: #dacdcd;
+    border: none;
+    box-shadow: inset 0 0 0 2px #dacdcd;
+    border-radius: 2px;
+    background-color: transparent;
+    margin-top: 26px;
+}
+
+
+.title-wrap{
+    width: 100%;
+    height: 60px;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: rgba(255,255,255,0.5);
+    border-bottom: 1px solid #D7D8D9;
+}
+.title-wrap .logo{
+    float: left;
+    margin: 10px;
+    width: 62px;
+    height: 40px;
+    background-image: url('/public/images/logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.title-wrap .return{
+    float: right;
+    height: 100%;
+    width:100px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    transition:background-color 1s;
+    -moz-transition:background-color 1s; /* Firefox 4 */
+    -webkit-transition:background-color 1s; /* Safari and Chrome */
+    -o-transition:background-color 1s; /* Opera */
+}
+.title-wrap .self{
+    float: right;
+    height: 100%;
+    width:100px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    transition:background-color 1s;
+    -moz-transition:background-color 1s; /* Firefox 4 */
+    -webkit-transition:background-color 1s; /* Safari and Chrome */
+    -o-transition:background-color 1s; /* Opera */
+}
+.title-wrap .self:hover,.title-wrap .return:hover{
+    background-color: #d7d8d9;
+}
+.title-wrap a,.title-wrap a:hover{
+    color: #373D41;
+    text-decoration: none;
+}
+.title-wrap a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.page_2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.needrow{
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.workrow{
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.content{
+    margin: 0 auto;
+    width: 1600px;
+}
+table th{
+    text-align: center;
+    white-space: nowrap;
+}
+td{
+    text-align: center;
+}
+.btn-color{
+    background-color: #4e372f;
+    color: white;
+}
+.btn-color:hover{
+    color:white;
+}

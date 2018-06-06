@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta name="viewport" content="" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+	<title>读书郎招聘</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/Antiquitycss/readboy.css">
+	<link rel="shortcut icon" href="/public/images/favicon.ico" />
+	<link rel="bookmark" href="/public/images/favicon.ico" type="image/x-icon"　/>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nSxiPohfziUaCuONe4ViUP2N"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="item item-1">
+			<p class="title">壮士，请留步！</p>
+			<p class="content_1">既然进来了，</p>
+			<p class="content_2">何不看看再走？</p>
+			<img src="/public/images/Antiquityimg/dontgo.png" />
+			<i class="up"></i>
+		</div>
+		<div class="item item-2">
+			<div class="content">
+				<p class="content_1">耐听耐看的读书郎广告</p>
+				<p class="content_2">是否勾起了你的童年记忆</p>
+			</div>
+			<video src="/public/images/Antiquityimg/readboy.mp4" controls="controls" autoplay="autoplay">
+				您的浏览器不支持 video 标签。
+			</video>
+			<div class="bg">
+				读书郎
+			</div>
+			<i class="up"></i>
+		</div>
+		<div class="item item-3">
+			<div class="title">
+				读书郎教育科技有限公司
+			</div>
+			<p class="content_1">
+			读书郎教育科技有限公司始建于1999年，是一家以科技创新、科技开发为导向的新兴电子产品制造企业。公司致力于教育科技产品的研发、制造、销售事业，主要产品有学生平板、儿童平板、智能手表、电子书包、智能点读机等产品系列。
+			</p>
+			<img src="/public/images/Antiquityimg/address.jpg" />
+			<div class="bg">
+				读书郎
+			</div>
+			<i class="up"></i>
+		</div>
+		<div class="item item-4">
+			<p class="title">读书郎求贤纳士</p>
+			<!-- 显示汇总的招聘内容 -->
+			<div id="readboy">
+			</div>
+			<div class="bg">
+				读书郎
+			</div>
+			<i class="up"></i>
+		</div>
+
+		
+		<!-- <div class="item item-8">
+			<div class="bg">
+				读书郎
+			</div>
+			<p class="content_1">
+				公司地址
+			</p>
+			<div id="allmap">
+
+			</div>
+			<i class="up"></i>
+		</div> -->
+	</div>
+	<div id="items">
+		<div class="title" id="position"></div>
+		<div class="detail">
+			<table>
+				<tr>
+					<td style="width: 1.5rem;">职业类别：</td>
+					<td id="type"></td>
+				</tr>
+				<tr>
+					<td style="width: 1.5rem;">工作内容：</td>
+					<td id="work"></td>
+				</tr>
+				<tr>
+					<td style="width: 1.5rem;">职能需求：</td>
+					<td id="need"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="bg">
+			读书郎
+		</div>
+	</div>
+	<div class="spinner">
+	  <div class="rect1"></div>
+	  <div class="rect2"></div>
+	  <div class="rect3"></div>
+	  <div class="rect4"></div>
+	  <div class="rect5"></div>
+	</div>
+</body>
+<script type="text/javascript" src="/public/js/Antiquityjs/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var scale = 1 / window.devicePixelRatio;
+    document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+</script>
+<script type="text/javascript" src="/public/js/Antiquityjs/readboy.js"></script>
+<script type="text/javascript">
+	// // 百度地图API功能
+	// var map = new BMap.Map("allmap");
+	// var point = new BMap.Point(116.331398,39.897445);
+	// map.centerAndZoom(point,11);
+	// map.centerAndZoom("读书郎教育科技有限公司",20);      // 用城市名设置地图中心点
+	// var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	// var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件右上角，仅包含平移和缩放按钮\
+	// map.addControl(top_left_control);        
+	// map.addControl(top_left_navigation);     
+</script>
+</html>

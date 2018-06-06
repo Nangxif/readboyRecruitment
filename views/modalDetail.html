@@ -6,8 +6,157 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>读书郎招聘模板系统</title>
+    <link rel="shortcut icon" href="/public/images/favicon.ico"/>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/public/css/modalDetail.css"/>
 </head>
 <body>
-ceshi
+    <!-- Jumbotron -->
+    <header class="jumbotron">
+        <p class="lead">用自动化构建工具增强你的工作流程！</p>
+        <p><a class="btn btn-lg btn-default btn-getting-started" href="javascript:;" role="button">开始使用</a>
+        </p>
+    </header>
+    <div class="title-wrap">
+        <div class="logo"></div>
+        <div class="return"><a href="/chooseModal">返回主页</a></div>
+        <div class="self"><a href="/login">个人中心</a></div>
+    </div>
+    <div class="content">
+        <div class="page_1">
+            <h2>已选择的模板</h2>
+            <p id="chooseModal">红色革命</p>
+        </div>
+        <div class="page_2">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>岗位类别</h2>
+                    <div class="input-group input-group-md">
+                        <span class="input-group-addon" id="sizing-addon1">*</span>
+                        <select class="form-control" id="type">
+                            <option value="技术类">技术类</option>
+                            <option value="行政类">行政类</option>
+                            <option value="储备干部">储备干部</option>
+                            <option value="应用类">应用类</option>
+                            <option value="市场营销类">市场营销类</option>
+                            <option value="教师类">教师类</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>岗位名称</h2>
+                    <div class="input-group input-group-md">
+                        <span class="input-group-addon" id="sizing-addon2">*</span>
+                        <input type="text" class="form-control" placeholder="岗位名称" aria-describedby="sizing-addon2" id="name" value="无"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>工作地点</h2>
+                    <div class="input-group input-group-md">
+                        <span class="input-group-addon" id="sizing-addon3">*</span>
+                        <select class="form-control" id="address">
+                            <option value="中山">中山</option>
+                            <option value="珠海">珠海</option>
+                            <option value="北京">北京</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>薪资待遇</h2>
+                    <div class="input-group input-group-md">
+                        <span class="input-group-addon">*</span>
+                        <input type="text" class="form-control" placeholder="薪资待遇" aria-describedby="sizing-addon2" id="money" value="无"/>
+                        <span class="input-group-addon">￥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" id="need">
+                    <h2>岗位需求</h2>
+                    <div class="row input-group input-group-md needrow">
+                        <input type="text" class="form-control" placeholder="岗位需求，每个框只允许填写一个需求" aria-describedby="sizing-addon4" value="无"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="add1">+</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6" id="work">
+                    <h2>工作内容</h2>
+                    <div class="input-group input-group-md workrow">
+                        <input type="text" class="form-control" placeholder="工作内容，每个框只允许填写一个工作内容" aria-describedby="sizing-addon5" value="无"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="add2">+</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12">
+                    <button class="btn btn-md btn-color" style="float: right;" id="sure">确定添加？</button>
+                </div>
+            </div>
+        </div>
+        <div class="page_3">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #4e372f;color: white;">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseOne">
+                            已添加的招聘信息
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>岗位类别</th>
+                                    <th>岗位名称</th>
+                                    <th>工作地点</th>
+                                    <th>岗位需求</th>
+                                    <th>工作内容</th>
+                                    <th>薪资待遇</th>
+                                    <th>删除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="8">无添加</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-color" style="float: right;" id="createModal" data-toggle="modal" data-target="#myModal">生成模板</button>
+    </div>
+    <!--The StartLine of the modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="clean">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">生成结果</h4>
+                </div>
+                <div class="modal-body" id="successText">
+
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-default" href="" id="enter">进入HTML</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--The EndLine of the modal-->
 </body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/modalDetail.js"></script>
 </html>

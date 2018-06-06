@@ -160,3 +160,11 @@ footer{
     width: 100%;
     color: white;
 }
+
+
+.modal-dialog{
+    width: 378px;
+}
+.modal-body{
+    padding: 0px;
+}

@@ -163,6 +163,11 @@ router.post('/user/register',function(req,res,next){
 router.post('/user/login',function(req,res,next){
     var userid=req.body.userid;
     var password=req.body.password;
+    if(JSON.stringify(req.cookies.request.userInfo)!="{}"){
+        responseData.code=0;
+        responseData.message='已处于登录状态，不能重复登录！';
+        return res.json(responseData);
+    }
     //登录验证
     if(userid==''||password==''){
         responseData.code=1;
