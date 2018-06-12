@@ -22,4 +22,12 @@ $(function(){
             }
         })
     })
+    //选择弹框
+    $(".grid-item").on("click",function(){
+        sessionStorage.setItem("modal",$(this)[0].id);
+        $("#pc_1").attr("src","/public/images/modal"+$(this)[0].id+".png");
+        $("#pc_2").attr("src","/public/images/modal"+$(this)[0].id+"-1.png");
+        $("#pc_3").attr("src","/public/images/modal"+$(this)[0].id+"-2.png");
+        $("#pc_4").attr("src","/public/images/modal"+$(this)[0].id+"-3.png");
+    })
 })

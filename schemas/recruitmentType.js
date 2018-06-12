@@ -3,6 +3,8 @@ var mongoose=require('mongoose');
 
 //招聘模板内容的表结构
 module.exports=new mongoose.Schema({
+    //模板创建人
+    who:String,
     //招聘类别
     category:String,
     //工作地点

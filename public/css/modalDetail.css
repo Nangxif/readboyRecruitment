@@ -1,5 +1,4 @@
 body{
-    height: 10000000px;
 }
 a:visited,a:hover,a:active{
     text-decoration: none;
@@ -92,6 +91,7 @@ a:visited,a:hover,a:active{
 .content{
     margin: 0 auto;
     width: 1600px;
+    overflow: hidden;
 }
 table th{
     text-align: center;
@@ -106,4 +106,8 @@ td{
 }
 .btn-color:hover{
     color:white;
+}
+footer{
+    margin-top: 60px;
+    margin-bottom: 20px;
 }

@@ -30,6 +30,7 @@ router.get('/',function(req,res,next){
 });
 //添加模板
 router.post('/addModal',function(req,res,next){
+    var who=req.cookies.request.userInfo.userid;
     var category=req.body.category;
     var address=req.body.address;
     var position=req.body.position;
@@ -37,6 +38,7 @@ router.post('/addModal',function(req,res,next){
     var need=req.body.need;
     var money=req.body.money;
     var modal=new Recruitment({
+        who:who,
         category:category,
         address:address,
         position:position,
@@ -54,7 +56,23 @@ router.post('/addModal',function(req,res,next){
 });
 //生成模板之后跳转的界面
 router.get('/Antiquity',function(req,res,next){
-    res.render('Antiquity');
+    res.render('Antiquity',{
+        userInfo:req.userInfo
+    });
+})
+
+//获取相应模板的数据
+router.get('/SearchModal',function(req,res,next){
+    Recruitment.findOne({
+        who:req.cookies.request.userInfo.userid
+    }).then(function(response){
+        if(response){
+            responseData.obj=response;
+            responseData.code=200;
+            responseData.message="查询成功";
+            return res.json(responseData);
+        }
+    })
 })
 module.exports=router;
 
