@@ -189,8 +189,12 @@ $(function(){
     var responseObj={};
     var getArray=[];
 	$.ajax({
-		type:"GET",
+		type:"POST",
 		url:"/modal/SearchModal",
+		data:{
+			modalName:"科幻",//sessionStorage.getItem("modalName"),
+			times:1//sessionStorage.getItem("times")
+		},
 		success:function(data){
             if(data){
                 var categoryArray=data.obj.category.split("|");

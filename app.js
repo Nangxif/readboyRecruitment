@@ -57,6 +57,7 @@ app.use(function(req,res,next){
 //根据不同的功能划分模块
 app.use('/',require('./routers/index'));
 app.use('/modal',require('./routers/modal'));
+app.use('/self',require('./routers/selfInformation'));
 //监听http请求
 mongoose.connect('mongodb://localhost:27018/blog',function(err){
     if(err){

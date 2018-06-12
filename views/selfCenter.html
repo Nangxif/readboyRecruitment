@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>读书郎招聘模板系统个人中心</title>
+    <link rel="shortcut icon" href="/public/images/favicon.ico"/>
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/public/css/selfCenter.css"/>
+</head>
+<body>
+    <div class="title-wrap">
+        <div class="logo"></div>
+        <div class="return"><a href="/chooseModal">返回主页</a></div>
+        <div id="logout"><a href="javascript:;">注销</a></div>
+    </div>
+    <div class="content">
+        <div class="page_1">
+            <h3>{{userInfo.username}}</h3>
+        </div>
+        <div class="page_2">
+            <table class="table table-hover table-striped" id="data">
+                <tr>
+                    <th>序号</th>
+                    <th>模板名称</th>
+                    <th>次数</th>
+                    <th>创建时间</th>
+                    <th>查看详情</th>
+                </tr>
+                <!--<tr>-->
+                    <!--<td class="warning">1</td>-->
+                    <!--<td class="warning">科幻</td>-->
+                    <!--<td class="warning">第1次</td>-->
+                    <!--<td class="warning">2018年6月12日</td>-->
+                    <!--<td class="warning"><button class="btn btn-success">查看</button></td>-->
+                <!--</tr>-->
+            </table>
+        </div>
+    </div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/selfCenter.js"></script>
+</html>

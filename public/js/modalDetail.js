@@ -3,6 +3,19 @@ $(function(){
     var modalArr=["古侠","科幻","故事","红色革命"];
     var whichModal=sessionStorage.getItem("modal");
     $("#chooseModal").text(modalArr[whichModal-1]);
+    //获取该模板使用过的次数
+    var times=1;
+    $.ajax({
+        type:"POST",
+        url:"/modal/times",
+        data:{
+            modalName:modalArr[whichModal-1]
+        },
+        success:function(tim){
+            times=tim.times+1;
+            $("#times").text(times);
+        }
+    })
     //顶部按钮点击后向下滑动
     $(".btn-getting-started").on("click",function(){
         $("html,body").animate({scrollTop:($(".title-wrap").eq(0).offset().top)},500);
@@ -168,10 +181,17 @@ $(function(){
         if(obj["type"].length==0){//如果没有数据的话，不能发送请求
             $("#successText").text("模板生成失败！");
         }else{
+            sessionStorage.setItem("modalName",modalArr[whichModal-1]);
+            sessionStorage.setItem("times",times);
+            var when=new Date();
             $.ajax({
                 type:"POST",
                 url:"/modal/addModal",
                 data:{
+                    modalName:modalArr[whichModal-1],
+                    //使用该模板次数
+                    times:times,
+                    //招聘岗位类型
                     category:obj["type"].join("|"),
                     //工作地点
                     address:obj["address"].join("|"),
@@ -182,7 +202,9 @@ $(function(){
                     //岗位需求
                     need:obj["need"].join("|"),
                     //薪资待遇
-                    money:obj["money"].join("|")
+                    money:obj["money"].join("|"),
+                    //创建时间
+                    when:when.toLocaleString()
                 },
                 success:function(result){
                     if(result.code==200){
