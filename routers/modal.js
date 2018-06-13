@@ -60,9 +60,18 @@ router.post('/addModal',function(req,res,next){
         }
     });
 });
-//生成模板之后跳转的界面
+//生成模板之后跳转古风界面
 router.get('/Antiquity',function(req,res,next){
     res.render('Antiquity',{
+        userInfo:req.userInfo
+    });
+})
+
+
+
+//生成模板之后跳转科技界面
+router.get('/Technology',function(req,res,next){
+    res.render('Technology',{
         userInfo:req.userInfo
     });
 })

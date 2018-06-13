@@ -2,6 +2,7 @@ var express=require('express');
 var router=express.Router();
 var app=express();
 var Recruitment=require('../models/readboyRecruitment');
+var Register=require("../models/registerModel");
 var swig=require('swig');
 app.engine('html',swig.renderFile);
 app.set('views','/views');
@@ -37,6 +38,18 @@ router.get('/allModal',function(req,res,next){
     }).then(function(response){
         if(response){
             responseData.obj=response;
+            responseData.code=200;
+            responseData.message="查询成功";
+            return res.json(responseData);
+        }
+    })
+})
+router.get('/selfInformation',function(req,res,next){
+    Register.findOne({
+        userid:req.cookies.request.userInfo.userid
+    }).then(function(self){
+        if(self){
+            responseData.obj=self;
             responseData.code=200;
             responseData.message="查询成功";
             return res.json(responseData);

@@ -1,3 +1,19 @@
+@media screen and (max-width:1366px) {
+    html,body{
+        width: 1366px;
+    }
+    .content{
+        width: 1366px;
+    }
+}
+@media screen and (min-width:1367px){
+    html,body{
+        width: 100%;
+    }
+    .content{
+        width: 1366px;
+    }
+}
 .title-wrap{
     width: 100%;
     height: 60px;
@@ -54,10 +70,46 @@
 
 .content{
     margin: 0 auto;
-    width: 1600px;
     overflow: hidden;
 }
-.page_2 table th,.page_2 table td{
+.content .page_1{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.content .page_1 .pic{
+    display: inline-block;
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    background-image: url("/public/images/student.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.content .page_1 h3{
+    display: inline-block;
+    flex: 1;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+.page_2 table th,.page_2 table td,.page_3 table th,.page_3 table td{
     text-align: center;
     white-space: nowrap;
 }
+
+
+/*预览框的样式*/
+iframe{
+    border-width: 0px;
+    width: 375px;
+    height: 667px;
+}
+footer{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+

@@ -1,9 +1,26 @@
-body{
+@media screen and (max-width:1366px) {
+    html,body{
+        width: 1366px;
+    }
+    .content{
+        width: 1366px;
+    }
 }
+@media screen and (min-width:1367px){
+    html,body{
+        width: 100%;
+    }
+    .content{
+        width: 1366px;
+    }
+}
+
+
 a:visited,a:hover,a:active{
     text-decoration: none;
 }
 .jumbotron {
+    width: 100%;
     margin-bottom: 0px;
     text-align: center;
     background-color:#4e372f;

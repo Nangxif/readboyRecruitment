@@ -18,9 +18,24 @@
     </div>
     <div class="content">
         <div class="page_1">
+            <div class="pic"></div>
             <h3>{{userInfo.username}}</h3>
         </div>
         <div class="page_2">
+            <table class="table table-hover table-striped" id="self">
+                <tr>
+                    <th>工号</th>
+                    <th>所属部门</th>
+                    <th>性别</th>
+                </tr>
+                <tr class="warning">
+                    <td id="userid"></td>
+                    <td id="apartment"></td>
+                    <td id="sex"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="page_3">
             <table class="table table-hover table-striped" id="data">
                 <tr>
                     <th>序号</th>
@@ -39,6 +54,35 @@
             </table>
         </div>
     </div>
+
+
+    <footer>
+        <div style="text-align:center">
+            <a  href="http://www.readboy.com/list-58-1.html">版权声明</a>©2017 读书郎教育科技有限公司 版权所有(<a href="http://www.miibeian.gov.cn/">粤ICP备12092216号-1</a>)<br>
+            <a href="http://wljg.gdgs.gov.cn/corpsrch.aspx?key=442000000171401" target="_blank" title="企业名称：读书郎教育科技有限公司&nbsp;&nbsp;法定代表人：秦曙光&nbsp;&nbsp;标识状态：已激活&nbsp;&nbsp;" style="line-height: 35px">
+                <img src="http://www.readboy.com/statics/images/gs_icon_201411260029331.png" alt="" style="display: inline-block;position: static;">粤工商备P201708002261
+            </a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44200002442753" style="line-height: 35px"><img src="http://www.readboy.com/statics/images/gaba.png" style="display: inline-block;position: static;"/>粤公网安备 44200002442753号</a>
+        </div>
+    </footer>
+
+    <!--The StartLine of the modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="clean">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">模板预览</h4>
+                </div>
+                <div class="modal-body" id="successText">
+                    <iframe src="" scrolling="yes" id="view"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-default" href="" id="enter">进入</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--The EndLine of the modal-->
 </body>
 <script src="/public/js/jquery-3.3.1.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
